@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jungkook Fan Site</title>
-    <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS Animation CSS -->
     <link href="assets/css/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="assets/css/index.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- AOS JavaScript -->
-    <script src="assets/js/aos.js" defer></script>
+
+    <link href="./assets/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container">
-                <a class="navbar-brand" href="#">Jungkook Fan Site</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-heart"></i> Jungkook Fan
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages/image.html">Images</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages/videos.html">Videos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages/wallpapers.html">Wallpapers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pages/about-us.html">About Us</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/image.html"><i class="fas fa-images"></i> Images</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/videos.html"><i class="fab fa-youtube"></i> Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/wallpapers.html"><i class="fas fa-mobile-alt"></i>
+                                Wallpapers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/about-us.html"><i class="fas fa-info-circle"></i> About
+                                Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -38,16 +53,32 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section text-center text-white d-flex align-items-center justify-content-center" style="background: url('assets/images/hero-bg.jpg') no-repeat center center/cover; height: 100vh;">
-        <div>
-            <h1 class="display-4" data-aos="fade-up">Welcome to Jungkook Fan Site</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="200">Explore exclusive content, images, videos, and wallpapers of Jungkook</p>
-            <a href="pages/image.html" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="400">Explore Now</a>
+    <section class="hero-section" id="hero-section" style="position: relative;">
+        <!-- Image Slider (Carousel) -->
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carousel-images">
+                <!-- Images will be added dynamically here -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Text Content -->
+        <div class="hero-text-content position-absolute top-50 start-50 translate-middle text-center" id="text-content">
+            <h2 class="display-4  fw-bold mb-4">🤞 Jungkook 💜</h2>
+            <p class="lead  mb-5"> ( Jeon Jeong-guk )</p>
         </div>
     </section>
+   
 
     <!-- Features Section -->
-    <section class="features py-5">
+    <section class="features py-5 bgpurple">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-4" data-aos="fade-up">
@@ -70,39 +101,45 @@
     </section>
 
     <!-- BTS Members Section -->
-    <section class="bts-members py-5 bg-light">
+    <section class="bts-members py-5 bgpink">
         <div class="container">
             <h2 class="text-center mb-4" data-aos="fade-up">Meet the BTS Members</h2>
             <div class="row text-center">
                 <div class="col-md-4" data-aos="fade-up">
-                    <img src="assets/images/rm.jpg" alt="RM" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    <img src="./assets/images/index/members/RM.jpg" alt="RM" class="img-fluid rounded-circle mb-3"
+                        style="width: 150px; height: 150px;">
                     <h4>RM</h4>
                     <p>Leader and rapper of BTS, known for his intellect and charisma.</p>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/images/jin.jpg" alt="Jin" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    <img src="./assets/images/index/members/Jin.jpg" alt="Jin" class="img-fluid rounded-circle mb-3"
+                        style="width: 150px; height: 150px;">
                     <h4>Jin</h4>
                     <p>The oldest member, known as Worldwide Handsome with amazing vocals.</p>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                    <img src="assets/images/suga.jpg" alt="Suga" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    <img src="./assets/images/index/members/Suga.jpg" alt="Suga" class="img-fluid rounded-circle mb-3"
+                        style="width: 150px; height: 150px;">
                     <h4>Suga</h4>
                     <p>Rapper and producer, known for his soulful lyrics and beats.</p>
                 </div>
             </div>
             <div class="row text-center mt-4">
                 <div class="col-md-4" data-aos="fade-up">
-                    <img src="assets/images/jhope.jpg" alt="J-Hope" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    <img src="./assets/images/index/members/J-Hope.jpg" alt="J-Hope" class="img-fluid rounded-circle mb-3"
+                        style="width: 150px; height: 150px;">
                     <h4>J-Hope</h4>
                     <p>Dancer and rapper, brings energy and positivity to the group.</p>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/images/jimin.jpg" alt="Jimin" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    <img src="./assets/images/index/members/Jimin.jpg" alt="Jimin" class="img-fluid rounded-circle mb-3"
+                        style="width: 150px; height: 150px;">
                     <h4>Jimin</h4>
                     <p>Known for his angelic voice and stunning dance moves.</p>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                    <img src="assets/images/v.jpg" alt="V" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    <img src="./assets/images/index/members/V.jpg" alt="V" class="img-fluid rounded-circle mb-3"
+                        style="width: 150px; height: 150px;">
                     <h4>V</h4>
                     <p>Baritone voice and unique personality make him stand out.</p>
                 </div>
@@ -110,23 +147,62 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2024 Jungkook Fan Site. All Rights Reserved.</p>
-            <div class="social-icons">
-                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-            </div>
+  <!-- Footer Section -->
+<footer class="py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Jungkook Fan Site. All Rights Reserved.</p>
+        <div class="social-icons mt-3">
+            <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <!-- JavaScript -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+   
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1200,
+        })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageFolder = "./assets/images/index/hero/";
+            const totalImages = 15;
+            let carouselInner = document.getElementById('carousel-images');
+
+            function loadCarouselImages() {
+                for (let i = 1; i <= totalImages; i++) { // Load images in order from 1 to 10
+                    let imagePath = `${imageFolder}img ${i}.jpg`;
+                    let carouselItem = document.createElement('div');
+                    carouselItem.classList.add('carousel-item', 'carousel-fade');
+                    if (i === 1) {
+                        carouselItem.classList.add('active'); // First item active
+                    }
+                    carouselItem.innerHTML = `<img src="${imagePath}" class="d-block w-100" alt="img ${i}">`;
+                    carouselInner.appendChild(carouselItem);
+                }
+            }
+
+            loadCarouselImages();
+
+            function applyRandomAnimation() {
+                const animations = ['fadeInUp', 'fadeInDown', 'fadeInLeft', 'fadeInRight'];
+                const randomHeadingAnimation = animations[Math.floor(Math.random() * animations.length)];
+                const randomSubtextAnimation = animations[Math.floor(Math.random() * animations.length)];
+
+                heroHeading.className = `hero-heading ${randomHeadingAnimation}`;
+                heroSubtext.className = `hero-subtext ${randomSubtextAnimation}`;
+            }
+
+            // Change animations on slide change
+            document.getElementById('heroCarousel').addEventListener('slid.bs.carousel', applyRandomAnimation);
+        });
     </script>
 </body>
+
 </html>
