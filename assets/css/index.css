@@ -11,7 +11,6 @@ body {
   line-height: 1.6;
 }
 
-
 /* Hero Section Styling */
 .hero-section {
   position: relative;
@@ -113,42 +112,16 @@ footer {
 }
 
 footer p {
+  color: rgb(217, 177, 255);
   margin: 0;
   font-size: 1rem;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.social-link {
-  color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-link:hover {
-  color: #ed61ff;
-  transform: scale(1.2) rotate(10deg);
 }
 
 @media (max-width: 768px) {
   footer {
     padding: 2rem 1rem;
   }
-
-  .social-icons {
-    gap: 0.5rem;
-  }
-
-  .social-link {
-    font-size: 1.2rem;
-  }
 }
-
 /* AOS Animations */
 [data-aos] {
   transition: all 0.6s ease;
