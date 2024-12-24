@@ -10,16 +10,23 @@ body {
     background-color: rgb(255, 180, 230);
 }
 .about-us h1, .about-us h2 {
-    color: #6c757d;
+    font-family: "Permanent Marker", serif;
+    font-weight: 400;
+    color: #3d0053;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 .about-us .lead {
+    font-family: "Caveat", serif;
+    font-optical-sizing: 20px;
+    font-weight: 400;
     color: #495057;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 .website-details {
     background: rgb(248, 166, 221);
+    font-family: "Permanent Marker", serif;
+  font-weight: 400;
     padding: 2rem;
     border-radius: 8px;
 }
@@ -43,8 +50,6 @@ body {
     color: #495057;
 }
 .crew-details img {
-    /* align-items: center; */
-    /* justify-content: center; */
     margin: auto;
     margin-top: 10px;
     max-width: 100%;

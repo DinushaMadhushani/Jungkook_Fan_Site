@@ -6,80 +6,130 @@
     <title>Wallpapers - Jungkook Fan Site</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/wallpapers.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .wallpaper-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            padding: 2rem;
-        }
-        .wallpaper-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .wallpaper-gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .wallpaper-title {
-            text-align: center;
-            margin: 2rem 0;
-            color: #495057;
-        }
-    </style>
+
+    <link rel="stylesheet" href="../assets/css/wallpaper.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 <body>
-
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
-        <!-- Include navigation bar from header.html -->
-        <?php include('header.html'); ?>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-heart"></i> Jungkook Fan
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./image.html"><i class="fas fa-images"></i> Images</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./videos.html"><i class="fab fa-youtube"></i> Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./wallpapers.html"><i class="fas fa-mobile-alt"></i>
+                                Wallpapers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about-us.html"><i class="fas fa-info-circle"></i> About
+                                Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- Main Content -->
     <main>
         <div class="container">
             <h1 class="wallpaper-title" data-aos="fade-down">Wide Wallpapers for PC</h1>
-            <section class="wallpaper-gallery">
-                <script>
-                    const images = [
-                        '../assets/images/index/hero/img 1.jpg',
-                        '../assets/images/index/hero/img 2.jpg',
-                        '../assets/images/index/hero/img 3.jpg',
-                        '../assets/images/index/hero/img 4.jpg',
-                        '../assets/images/index/hero/img 5.jpg'
-                    ];
-
-                    images.forEach((src, index) => {
-                        document.write(`
-                            <div data-aos="zoom-in" data-aos-delay="${index * 100}">
-                                <img src="${src}" alt="Wallpaper ${index + 1}">
-                            </div>
-                        `);
-                    });
-                </script>
+            <section class="wallpaper-gallery" id="imageGrid">
+                <!-- Images will be dynamically added here -->
             </section>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <!-- Include footer from header.html -->
-        <?php include('footer.html'); ?>
-    </footer>
+    <!-- Scroll to Top Button -->
+    <div id="scrollUp" class="d-flex">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Preview Modal -->
+    <div id="imagePreview" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
+        <div style="position: relative; width: 80%; max-width: 1200px;">
+            <img id="previewImage" style="width: 100%; border-radius: 10px;">
+            <a id="downloadLink" download class="btn btn-primary" style="position: absolute; bottom: 30px; right: 10px;"><i class="fas fa-download"></a>
+            <button id="closePreview" class="btn btn-danger" style="position: absolute; top: 10px; right: 10px;">&times;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1200,
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageGrid = document.getElementById('imageGrid');
+            const imagePreview = document.getElementById('imagePreview');
+            const previewImage = document.getElementById('previewImage');
+            const closePreview = document.getElementById('closePreview');
+            const downloadLink = document.getElementById('downloadLink');
+            const scrollUp = document.getElementById('scrollUp');
+
+            const totalImages = 15; // Adjust total number of images here
+
+            for (let i = totalImages; i >= 1; i--) {
+                const gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+
+                const img = document.createElement('img');
+                img.src = `../assets/images/wallpaper/wallpaper (${i}).jpg`;
+                img.alt = `Image ${i}`;
+
+                gridItem.appendChild(img);
+                gridItem.addEventListener('click', () => {
+                    previewImage.src = img.src;
+                    downloadLink.href = img.src;
+                    imagePreview.style.display = 'flex';
+                });
+
+                imageGrid.appendChild(gridItem);
+            }
+
+            closePreview.addEventListener('click', () => {
+                imagePreview.style.display = 'none';
+                previewImage.src = '';
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    scrollUp.style.display = 'block';
+                } else {
+                    scrollUp.style.display = 'none';
+                }
+            });
+
+            scrollUp.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+        });
     </script>
 </body>
 </html>
