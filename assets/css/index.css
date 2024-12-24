@@ -100,28 +100,6 @@ h2 {
   background-color: #ffd5e5;
 }
 
-/* Footer */
-footer {
-  color: #fff;
-  position: relative;
-  background: rgba(30, 30, 30, 0.85);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(14.4px);
-  -webkit-backdrop-filter: blur(14.4px);
-  border: 1px solid rgba(30, 30, 30, 0.55);
-}
-
-footer p {
-  color: rgb(217, 177, 255);
-  margin: 0;
-  font-size: 1rem;
-}
-
-@media (max-width: 768px) {
-  footer {
-    padding: 2rem 1rem;
-  }
-}
 /* AOS Animations */
 [data-aos] {
   transition: all 0.6s ease;
