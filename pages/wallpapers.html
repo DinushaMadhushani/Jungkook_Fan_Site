@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/nav.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -65,13 +67,17 @@
     </div>
 
     <!-- Preview Modal -->
-    <div id="imagePreview" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
+    <div id="imagePreview"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
         <div style="position: relative; width: 80%; max-width: 1200px;">
             <img id="previewImage" style="width: 100%; border-radius: 10px;">
-            <a id="downloadLink" download class="btn btn-primary" style="position: absolute; bottom: 30px; right: 10px;"><i class="fas fa-download"></a>
-            <button id="closePreview" class="btn btn-danger" style="position: absolute; top: 10px; right: 10px;">&times;</button>
+            <a id="downloadLink" download class="btn btn-primary"
+                style="position: absolute; bottom: 30px; right: 10px;"><i class="fas fa-download"></a>
+            <button id="closePreview" class="btn btn-danger"
+                style="position: absolute; top: 10px; right: 10px;">&times;</button>
         </div>
     </div>
+   
 
     <!-- JavaScript -->
 
@@ -92,7 +98,7 @@
             const downloadLink = document.getElementById('downloadLink');
             const scrollUp = document.getElementById('scrollUp');
 
-            const totalImages = 15; // Adjust total number of images here
+            const totalImages = 70; // Adjust total number of images here
 
             for (let i = totalImages; i >= 1; i--) {
                 const gridItem = document.createElement('div');
@@ -128,8 +134,9 @@
             scrollUp.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-            
+
         });
     </script>
 </body>
+
 </html>
